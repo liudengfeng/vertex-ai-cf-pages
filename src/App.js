@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
+import SidebarMenu
+  from './Sidebar';
 function App() {
   return (
     <div className="container">
@@ -8,17 +9,7 @@ function App() {
         <div className="logo-container">
           <img src={logo} className="App-logo" alt="logo" />
         </div>
-        <h2>菜单</h2>
-        <ul>
-          <li>主页</li>
-          <li>探索</li>
-          <li>通知</li>
-          <li>消息</li>
-          <li>书签</li>
-          <li>列表</li>
-          <li>个人资料</li>
-          <li>更多</li>
-        </ul>
+        <SidebarMenu />
       </div>
       <div className="content">
         <h2>内容</h2>
