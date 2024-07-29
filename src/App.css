@@ -2,43 +2,66 @@
 .container {
   display: flex;
   height: 100vh;
+  padding: 10px; /* 整个容器的内边距 */
+  overflow-x: auto; /* 允许水平滚动 */
 }
 
 .sidebar {
-  width: 20%;
+  width: 20%; /* 左侧菜单宽度 */
   background-color: #f5f8fa;
-  padding: 20px;
+  padding: 10px; /* 内边距 */
+  display: flex;
+  flex-direction: column;
+  position: relative; /* 使绝对定位的子元素相对于侧边栏 */
+}
+
+.content {
+  width: 60%; /* 中间主体宽度 */
+  padding: 10px; /* 内边距 */
+}
+
+.widgets {
+  width: 20%; /* 右侧技术参数宽度 */
+  background-color: #f5f8fa;
+  padding: 10px; /* 内边距 */
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  margin-bottom: 20px; /* 添加底部外边距 */
 }
 
 .App-logo {
   height: 40px;
 }
 
-.content {
-  width: 60%;
-  padding: 20px;
-}
-
-.widgets {
-  width: 20%;
-  background-color: #f5f8fa;
-  padding: 20px;
-}
-
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
+  height: 100%; /* 确保侧边栏菜单占满整个侧边栏高度 */
 }
 
 .account-menu {
-  margin-top: auto;
+  position: absolute; /* 绝对定位 */
+  bottom: 0; /* 固定在底部 */
+  width: 100%; /* 占满侧边栏的宽度 */
+  display: flex; /* 使用 flexbox 布局 */
+  justify-content: center; /* 水平居中对齐 */
+  align-items: center; /* 垂直居中对齐 */
+  padding: 10px; /* 添加内边距 */
+}
+
+/* 媒体查询 */
+@media (max-width: 768px) {
+  .container {
+    overflow-x: auto; /* 允许水平滚动 */
+  }
+
+  .sidebar,
+  .content,
+  .widgets {
+    flex: 0 0 auto; /* 防止子元素缩小 */
+  }
 }

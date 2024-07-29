@@ -1,55 +1,62 @@
 import * as React from 'react';
-import Divider from '@mui/material/Divider';
-import MenuList from '@mui/material/MenuList';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ContentCutIcon from '@mui/icons-material/ContentCut';
-// import ContentCopy from '@mui/icons-material/ContentCopy';
-// import ContentPaste from '@mui/icons-material/ContentPaste';
-// import Cloud from '@mui/icons-material/Cloud';
-// import AccountCircle from '@mui/icons-material/AccountCircle';
-// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { MenuList, MenuItem, ListItemIcon, ListItemText, Divider, Tooltip } from '@mui/material';
+import HomeIcon from '@mui/icons-material/Home';
+import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
+import logo from './logo.svg';
 
 export default function SidebarMenu() {
     return (
-        <div className="sidebar-menu">
-            <MenuList>
-                <MenuItem>
-                    <ListItemIcon>
-                        <ContentCutIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>剪切</ListItemText>
-                </MenuItem>
-                {/* <MenuItem>
-                    <ListItemIcon>
-                        <ContentCopy fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>复制</ListItemText>
-                </MenuItem> */}
-                {/* <MenuItem>
-                    <ListItemIcon>
-                        <ContentPaste fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>粘贴</ListItemText>
-                </MenuItem> */}
+        <>
+            <div className="logo-container">
+                <img src={logo} className="App-logo" alt="logo" />
+            </div>
+            <MenuList className="sidebar-menu">
+                <Tooltip title="主页" placement="top-start">
+                    <MenuItem>
+                        <ListItemIcon>
+                            <HomeIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>主页</ListItemText>
+                    </MenuItem>
+                </Tooltip>
+
+                <Tooltip title="新建提示词" placement="top-start">
+                    <MenuItem>
+                        <ListItemIcon>
+                            <ControlPointIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>新建</ListItemText>
+                    </MenuItem>
+                </Tooltip>
+                <Tooltip title="学习文档" placement="top-start">
+                    <MenuItem>
+                        <ListItemIcon>
+                            <MenuBookIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>文档</ListItemText>
+                    </MenuItem>
+                </Tooltip>
+                <Tooltip title="系统设置" placement="top-start">
+                    <MenuItem>
+                        <ListItemIcon>
+                            <SettingsIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>设置</ListItemText>
+                    </MenuItem>
+                </Tooltip>
                 <Divider />
-                {/* <MenuItem>
-                    <ListItemIcon>
-                        <Cloud fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>Web 剪贴板</ListItemText>
-                </MenuItem> */}
-            </MenuList>
-            {/* <div className="account-menu">
-                <Divider />
-                <MenuItem>
-                    <ListItemIcon>
-                        <AccountCircleIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText>账户</ListItemText>
-                </MenuItem>
-            </div> */}
-        </div>
+                <div className="account-menu">
+                    <MenuItem>
+                        <ListItemIcon>
+                            <AccountCircleIcon fontSize="small" />
+                        </ListItemIcon>
+                        <ListItemText>账户</ListItemText>
+                    </MenuItem>
+                </div>
+            </MenuList >
+        </>
     );
 }

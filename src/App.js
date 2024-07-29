@@ -1,14 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import SidebarMenu
-  from './Sidebar';
+import SidebarMenu from './Sidebar';
+
 function App() {
   return (
     <div className="container">
       <div className="sidebar">
-        <div className="logo-container">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
         <SidebarMenu />
       </div>
       <div className="content">
